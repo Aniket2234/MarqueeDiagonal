@@ -68,7 +68,7 @@ export default function DiagonalMarqueeGallery() {
     >
       {/* Diagonal Row 1 - Top Left to Bottom Right */}
       <div 
-        className="diagonal-row diagonal-row-1"
+        className={`diagonal-row diagonal-row-1 ${getAnimationClass('left')}`}
         style={{
           position: 'absolute',
           top: '-20%',
@@ -77,7 +77,9 @@ export default function DiagonalMarqueeGallery() {
           transform: 'rotate(25deg)',
           display: 'flex',
           gap: '2rem',
-          animation: 'slideRightToLeft 100s linear infinite'
+          animationDuration: '100s',
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -94,7 +96,7 @@ export default function DiagonalMarqueeGallery() {
 
       {/* Diagonal Row 2 */}
       <div 
-        className="diagonal-row diagonal-row-2"
+        className={`diagonal-row diagonal-row-2 ${getAnimationClass('right')}`}
         style={{
           position: 'absolute',
           top: '10%',
@@ -103,7 +105,9 @@ export default function DiagonalMarqueeGallery() {
           transform: 'rotate(25deg)',
           display: 'flex',
           gap: '2rem',
-          animation: 'slideLeftToRight 120s linear infinite'
+          animationDuration: '120s',
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -120,7 +124,7 @@ export default function DiagonalMarqueeGallery() {
 
       {/* Diagonal Row 3 */}
       <div 
-        className="diagonal-row diagonal-row-3"
+        className={`diagonal-row diagonal-row-3 ${getAnimationClass('left')}`}
         style={{
           position: 'absolute',
           top: '40%',
@@ -129,7 +133,9 @@ export default function DiagonalMarqueeGallery() {
           transform: 'rotate(25deg)',
           display: 'flex',
           gap: '2rem',
-          animation: 'slideRightToLeft 90s linear infinite'
+          animationDuration: '90s',
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -146,7 +152,7 @@ export default function DiagonalMarqueeGallery() {
 
       {/* Diagonal Row 4 */}
       <div 
-        className="diagonal-row diagonal-row-4"
+        className={`diagonal-row diagonal-row-4 ${getAnimationClass('right')}`}
         style={{
           position: 'absolute',
           top: '70%',
@@ -155,7 +161,9 @@ export default function DiagonalMarqueeGallery() {
           transform: 'rotate(25deg)',
           display: 'flex',
           gap: '2rem',
-          animation: 'slideLeftToRight 110s linear infinite'
+          animationDuration: '110s',
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -172,7 +180,7 @@ export default function DiagonalMarqueeGallery() {
 
       {/* Diagonal Row 5 */}
       <div 
-        className="diagonal-row diagonal-row-5"
+        className={`diagonal-row diagonal-row-5 ${getAnimationClass('left')}`}
         style={{
           position: 'absolute',
           top: '100%',
@@ -181,7 +189,9 @@ export default function DiagonalMarqueeGallery() {
           transform: 'rotate(25deg)',
           display: 'flex',
           gap: '2rem',
-          animation: 'slideRightToLeft 95s linear infinite'
+          animationDuration: '95s',
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
         }}
       >
         {infiniteImages.map((src, index) => (

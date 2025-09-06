@@ -132,6 +132,19 @@
   will-change: transform;
 }
 
+/* Animation classes based on scroll direction */
+.slide-right-to-left {
+  animation-name: slideRightToLeft;
+}
+
+.slide-left-to-right {
+  animation-name: slideLeftToRight;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .diagonal-row img {
