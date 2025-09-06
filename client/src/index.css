@@ -110,21 +110,21 @@
 }
 
 /* Diagonal Marquee Gallery Styles */
-@keyframes slideRightToLeft {
+@keyframes marqueeForward {
   0% {
-    transform: rotate(25deg) translateX(0);
+    transform: translateX(0) rotate(15deg);
   }
   100% {
-    transform: rotate(25deg) translateX(-33.333%);
+    transform: translateX(-33.333%) rotate(15deg);
   }
 }
 
-@keyframes slideLeftToRight {
+@keyframes marqueeBackward {
   0% {
-    transform: rotate(25deg) translateX(-33.333%);
+    transform: translateX(-33.333%) rotate(15deg);
   }
   100% {
-    transform: rotate(25deg) translateX(0);
+    transform: translateX(0) rotate(15deg);
   }
 }
 
@@ -133,29 +133,33 @@
 }
 
 /* Animation classes based on scroll direction */
-.slide-right-to-left {
-  animation-name: slideRightToLeft;
+.animate-forward {
+  animation-name: marqueeForward;
 }
 
-.slide-left-to-right {
-  animation-name: slideLeftToRight;
-}
-
-.paused {
-  animation-play-state: paused;
+.animate-backward {
+  animation-name: marqueeBackward;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .diagonal-row img {
-    width: 20rem;
-    height: 14rem;
+    width: 18rem !important;
+    height: 12rem !important;
+  }
+  
+  .diagonal-row {
+    gap: 1rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .diagonal-row img {
-    width: 16rem;
-    height: 12rem;
+    width: 14rem !important;
+    height: 10rem !important;
+  }
+  
+  .diagonal-row {
+    gap: 0.75rem !important;
   }
 }

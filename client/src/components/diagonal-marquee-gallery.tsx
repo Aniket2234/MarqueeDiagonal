@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function DiagonalMarqueeGallery() {
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | 'none'>('none');
+  const [scrollDirection, setScrollDirection] = useState<'forward' | 'backward' | 'none'>('forward');
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [animationSpeed, setAnimationSpeed] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // High quality design images for the gallery
@@ -36,12 +37,21 @@ export default function DiagonalMarqueeGallery() {
       const containerVisible = containerRect.top < window.innerHeight && containerRect.bottom > 0;
       
       if (containerVisible) {
-        if (currentScrollY > lastScrollY + 5) {
-          setScrollDirection('down');
-        } else if (currentScrollY < lastScrollY - 5) {
-          setScrollDirection('up');
+        const scrollDelta = currentScrollY - lastScrollY;
+        
+        if (Math.abs(scrollDelta) > 2) {
+          if (scrollDelta > 0) {
+            setScrollDirection('forward');
+          } else {
+            setScrollDirection('backward');
+          }
+          
+          // Adjust speed based on scroll intensity
+          const speedMultiplier = Math.min(Math.abs(scrollDelta) / 10, 3);
+          setAnimationSpeed(speedMultiplier);
+          
+          setLastScrollY(currentScrollY);
         }
-        setLastScrollY(currentScrollY);
       }
     };
 
@@ -49,37 +59,27 @@ export default function DiagonalMarqueeGallery() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  // Get animation class based on scroll direction
-  const getAnimationClass = (baseDirection: 'left' | 'right') => {
-    if (scrollDirection === 'none') return 'paused';
-    
-    if (baseDirection === 'left') {
-      return scrollDirection === 'down' ? 'slide-right-to-left' : 'slide-left-to-right';
-    } else {
-      return scrollDirection === 'down' ? 'slide-left-to-right' : 'slide-right-to-left';
-    }
-  };
-
   return (
     <div 
       ref={containerRef}
       className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100"
       data-testid="diagonal-marquee-gallery"
     >
-      {/* Diagonal Row 1 - Top Left to Bottom Right */}
+      {/* Diagonal Row 1 */}
       <div 
-        className={`diagonal-row diagonal-row-1 ${getAnimationClass('left')}`}
+        className={`diagonal-row ${scrollDirection === 'forward' ? 'animate-forward' : 'animate-backward'}`}
         style={{
           position: 'absolute',
-          top: '-20%',
-          left: '-30%',
-          width: '180%',
-          transform: 'rotate(25deg)',
+          top: '-10%',
+          left: '-50%',
+          width: '200%',
+          transform: 'rotate(15deg)',
           display: 'flex',
-          gap: '2rem',
-          animationDuration: '100s',
+          gap: '1.5rem',
+          animationDuration: `${60 / animationSpeed}s`,
           animationIterationCount: 'infinite',
-          animationTimingFunction: 'linear'
+          animationTimingFunction: 'linear',
+          zIndex: 5
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -87,7 +87,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-96 h-64 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-all duration-500"
+              className="w-80 h-56 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
               data-testid={`image-card-1-${index}`}
             />
           </div>
@@ -96,18 +96,19 @@ export default function DiagonalMarqueeGallery() {
 
       {/* Diagonal Row 2 */}
       <div 
-        className={`diagonal-row diagonal-row-2 ${getAnimationClass('right')}`}
+        className={`diagonal-row ${scrollDirection === 'forward' ? 'animate-backward' : 'animate-forward'}`}
         style={{
           position: 'absolute',
-          top: '10%',
-          left: '-30%',
-          width: '180%',
-          transform: 'rotate(25deg)',
+          top: '25%',
+          left: '-50%',
+          width: '200%',
+          transform: 'rotate(15deg)',
           display: 'flex',
-          gap: '2rem',
-          animationDuration: '120s',
+          gap: '1.5rem',
+          animationDuration: `${80 / animationSpeed}s`,
           animationIterationCount: 'infinite',
-          animationTimingFunction: 'linear'
+          animationTimingFunction: 'linear',
+          zIndex: 4
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -115,7 +116,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-96 h-64 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-all duration-500"
+              className="w-80 h-56 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
               data-testid={`image-card-2-${index}`}
             />
           </div>
@@ -124,18 +125,19 @@ export default function DiagonalMarqueeGallery() {
 
       {/* Diagonal Row 3 */}
       <div 
-        className={`diagonal-row diagonal-row-3 ${getAnimationClass('left')}`}
+        className={`diagonal-row ${scrollDirection === 'forward' ? 'animate-forward' : 'animate-backward'}`}
         style={{
           position: 'absolute',
-          top: '40%',
-          left: '-30%',
-          width: '180%',
-          transform: 'rotate(25deg)',
+          top: '60%',
+          left: '-50%',
+          width: '200%',
+          transform: 'rotate(15deg)',
           display: 'flex',
-          gap: '2rem',
-          animationDuration: '90s',
+          gap: '1.5rem',
+          animationDuration: `${70 / animationSpeed}s`,
           animationIterationCount: 'infinite',
-          animationTimingFunction: 'linear'
+          animationTimingFunction: 'linear',
+          zIndex: 3
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -143,7 +145,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-96 h-64 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-all duration-500"
+              className="w-80 h-56 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
               data-testid={`image-card-3-${index}`}
             />
           </div>
@@ -152,18 +154,19 @@ export default function DiagonalMarqueeGallery() {
 
       {/* Diagonal Row 4 */}
       <div 
-        className={`diagonal-row diagonal-row-4 ${getAnimationClass('right')}`}
+        className={`diagonal-row ${scrollDirection === 'forward' ? 'animate-backward' : 'animate-forward'}`}
         style={{
           position: 'absolute',
-          top: '70%',
-          left: '-30%',
-          width: '180%',
-          transform: 'rotate(25deg)',
+          top: '95%',
+          left: '-50%',
+          width: '200%',
+          transform: 'rotate(15deg)',
           display: 'flex',
-          gap: '2rem',
-          animationDuration: '110s',
+          gap: '1.5rem',
+          animationDuration: `${90 / animationSpeed}s`,
           animationIterationCount: 'infinite',
-          animationTimingFunction: 'linear'
+          animationTimingFunction: 'linear',
+          zIndex: 2
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -171,36 +174,8 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-96 h-64 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-all duration-500"
+              className="w-80 h-56 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
               data-testid={`image-card-4-${index}`}
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Diagonal Row 5 */}
-      <div 
-        className={`diagonal-row diagonal-row-5 ${getAnimationClass('left')}`}
-        style={{
-          position: 'absolute',
-          top: '100%',
-          left: '-30%',
-          width: '180%',
-          transform: 'rotate(25deg)',
-          display: 'flex',
-          gap: '2rem',
-          animationDuration: '95s',
-          animationIterationCount: 'infinite',
-          animationTimingFunction: 'linear'
-        }}
-      >
-        {infiniteImages.map((src, index) => (
-          <div key={`row5-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-96 h-64 object-cover rounded-2xl shadow-2xl hover:scale-105 transition-all duration-500"
-              data-testid={`image-card-5-${index}`}
             />
           </div>
         ))}
