@@ -55,7 +55,7 @@ export default function DiagonalMarqueeGallery() {
 
       <div 
         ref={containerRef}
-        className="relative w-full h-[120vh] overflow-hidden bg-white"
+        className="relative w-full h-[180vh] overflow-hidden bg-white"
         data-testid="diagonal-marquee-gallery"
         style={{
           clipPath: 'polygon(0 0, 100% 10%, 100% 90%, 0 100%)',
@@ -69,7 +69,9 @@ export default function DiagonalMarqueeGallery() {
           style={{
             top: '5%',
             gap: '2rem',
-            paddingLeft: '2rem'
+            paddingLeft: '2rem',
+            transform: 'rotate(-12deg)',
+            transformOrigin: 'left center'
           }}
         >
           {infiniteImages.map((src, index) => (
@@ -98,7 +100,9 @@ export default function DiagonalMarqueeGallery() {
             top: '30%',
             gap: '2rem',
             paddingRight: '2rem',
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
+            transform: 'rotate(8deg)',
+            transformOrigin: 'right center'
           }}
         >
           {infiniteImages.map((src, index) => (
@@ -126,7 +130,9 @@ export default function DiagonalMarqueeGallery() {
           style={{
             top: '55%',
             gap: '2rem',
-            paddingLeft: '2rem'
+            paddingLeft: '2rem',
+            transform: 'rotate(-15deg)',
+            transformOrigin: 'left center'
           }}
         >
           {infiniteImages.map((src, index) => (
@@ -152,10 +158,12 @@ export default function DiagonalMarqueeGallery() {
         <div 
           className="absolute w-full flex marquee-right-slow"
           style={{
-            top: '80%',
+            top: '75%',
             gap: '2rem',
             paddingRight: '2rem',
-            justifyContent: 'flex-end'
+            justifyContent: 'flex-end',
+            transform: 'rotate(10deg)',
+            transformOrigin: 'right center'
           }}
         >
           {infiniteImages.map((src, index) => (
