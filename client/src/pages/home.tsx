@@ -61,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* Diagonal Marquee Gallery Section */}
-      <section className="relative w-screen -ml-[50vw] left-1/2">
+      <section className="relative">
         <div className="py-12 text-center bg-white">
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
             Our Portfolio
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gray-900 text-white relative -mt-56 pt-56 z-20">
+      <section className="py-20 bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
