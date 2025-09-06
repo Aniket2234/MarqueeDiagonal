@@ -67,8 +67,8 @@ export default function DiagonalMarqueeGallery() {
         className="absolute flex gap-8 animate-scroll-left"
         style={{
           top: '3%',
-          left: '-20%',
-          width: '240%',
+          left: '-60%',
+          width: '300%',
           transform: 'rotate(15deg) translateZ(100px)',
           transformOrigin: 'left center',
           transformStyle: 'preserve-3d'
@@ -91,8 +91,8 @@ export default function DiagonalMarqueeGallery() {
         className="absolute flex gap-8 animate-scroll-right"
         style={{
           top: '25%',
-          left: '-120%',
-          width: '240%',
+          left: '-160%',
+          width: '300%',
           transform: 'rotate(15deg) translateZ(60px)',
           transformOrigin: 'left center',
           transformStyle: 'preserve-3d'
@@ -115,8 +115,8 @@ export default function DiagonalMarqueeGallery() {
         className="absolute flex gap-8 animate-scroll-left-slow"
         style={{
           top: '47%',
-          left: '-20%',
-          width: '240%',
+          left: '-60%',
+          width: '300%',
           transform: 'rotate(15deg) translateZ(30px)',
           transformOrigin: 'left center',
           transformStyle: 'preserve-3d'
@@ -139,8 +139,8 @@ export default function DiagonalMarqueeGallery() {
         className="absolute flex gap-8 animate-scroll-right-slow"
         style={{
           top: '69%',
-          left: '-120%',
-          width: '240%',
+          left: '-160%',
+          width: '300%',
           transform: 'rotate(15deg) translateZ(0px)',
           transformOrigin: 'left center',
           transformStyle: 'preserve-3d'
