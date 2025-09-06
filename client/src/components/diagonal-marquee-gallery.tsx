@@ -70,7 +70,7 @@ export default function DiagonalMarqueeGallery() {
         className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '-15%',
+          top: '-10%',
           left: '-50%',
           width: '200%',
           height: '15%',
@@ -90,7 +90,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                className="w-80 h-56 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-1-${index}`}
               />
             </div>
@@ -103,7 +103,7 @@ export default function DiagonalMarqueeGallery() {
         className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '5%',
+          top: '15%',
           left: '-50%',
           width: '200%',
           height: '15%',
@@ -123,7 +123,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                className="w-80 h-56 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-2-${index}`}
               />
             </div>
@@ -136,7 +136,7 @@ export default function DiagonalMarqueeGallery() {
         className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '25%',
+          top: '40%',
           left: '-50%',
           width: '200%',
           height: '15%',
@@ -156,7 +156,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                className="w-80 h-56 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-3-${index}`}
               />
             </div>
@@ -169,7 +169,7 @@ export default function DiagonalMarqueeGallery() {
         className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '45%',
+          top: '65%',
           left: '-50%',
           width: '200%',
           height: '15%',
@@ -189,7 +189,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                className="w-80 h-56 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-4-${index}`}
               />
             </div>
@@ -197,71 +197,6 @@ export default function DiagonalMarqueeGallery() {
         </div>
       </div>
 
-      {/* Diagonal Row 5 */}
-      <div 
-        className="diagonal-row-container"
-        style={{
-          position: 'absolute',
-          top: '65%',
-          left: '-50%',
-          width: '200%',
-          height: '15%',
-          transform: 'rotate(18deg)',
-          transformOrigin: 'center center'
-        }}
-      >
-        <div className="diagonal-row animate-forward" style={{
-          display: 'flex',
-          gap: '1.5rem',
-          animationDuration: '65s',
-          animationIterationCount: 'infinite',
-          animationTimingFunction: 'linear'
-        }}>
-          {infiniteImages.map((src, index) => (
-            <div key={`row5-${index}`} className="flex-shrink-0">
-              <img
-                src={src}
-                alt={`Gallery image ${index + 1}`}
-                className="w-64 h-44 object-cover rounded-xl shadow-lg"
-                data-testid={`image-card-5-${index}`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Diagonal Row 6 */}
-      <div 
-        className="diagonal-row-container"
-        style={{
-          position: 'absolute',
-          top: '85%',
-          left: '-50%',
-          width: '200%',
-          height: '15%',
-          transform: 'rotate(18deg)',
-          transformOrigin: 'center center'
-        }}
-      >
-        <div className="diagonal-row animate-backward" style={{
-          display: 'flex',
-          gap: '1.5rem',
-          animationDuration: '85s',
-          animationIterationCount: 'infinite',
-          animationTimingFunction: 'linear'
-        }}>
-          {infiniteImages.map((src, index) => (
-            <div key={`row6-${index}`} className="flex-shrink-0">
-              <img
-                src={src}
-                alt={`Gallery image ${index + 1}`}
-                className="w-64 h-44 object-cover rounded-xl shadow-lg"
-                data-testid={`image-card-6-${index}`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
