@@ -25,7 +25,7 @@ export default function DiagonalMarqueeGallery() {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full h-screen overflow-hidden bg-white"
+      className="relative w-full h-screen overflow-hidden bg-white z-10"
       data-testid="diagonal-marquee-gallery"
       style={{
         transform: 'perspective(1200px) rotateX(10deg) rotateY(-5deg)',
@@ -65,7 +65,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-left"
         style={{
-          top: '5%',
+          top: '0%',
           left: '0%',
           width: '200%',
           transform: 'rotate(15deg)',
@@ -77,7 +77,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-96 h-64 object-cover rounded-2xl shadow-xl border-2 border-white/50"
               data-testid={`image-card-1-${index}`}
             />
           </div>
@@ -88,7 +88,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-right"
         style={{
-          top: '30%',
+          top: '22%',
           left: '-100%',
           width: '200%',
           transform: 'rotate(15deg)',
@@ -100,7 +100,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-96 h-64 object-cover rounded-2xl shadow-xl border-2 border-white/50"
               data-testid={`image-card-2-${index}`}
             />
           </div>
@@ -111,7 +111,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-left-slow"
         style={{
-          top: '55%',
+          top: '44%',
           left: '0%',
           width: '200%',
           transform: 'rotate(15deg)',
@@ -123,7 +123,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-96 h-64 object-cover rounded-2xl shadow-xl border-2 border-white/50"
               data-testid={`image-card-3-${index}`}
             />
           </div>
@@ -134,7 +134,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-right-slow"
         style={{
-          top: '80%',
+          top: '66%',
           left: '-100%',
           width: '200%',
           transform: 'rotate(15deg)',
@@ -146,7 +146,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-96 h-64 object-cover rounded-2xl shadow-xl border-2 border-white/50"
               data-testid={`image-card-4-${index}`}
             />
           </div>
