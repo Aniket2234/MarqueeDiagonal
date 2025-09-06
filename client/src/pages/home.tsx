@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-20 bg-gray-900 text-white relative -mt-32 pt-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
