@@ -71,16 +71,16 @@ export default function DiagonalMarqueeGallery() {
         style={{
           position: 'absolute',
           top: '-10%',
-          left: '-50%',
-          width: '200%',
-          height: '15%',
+          left: '-30%',
+          width: '160%',
+          height: '20%',
           transform: 'rotate(18deg)',
           transformOrigin: 'center center'
         }}
       >
         <div className="diagonal-row animate-forward" style={{
           display: 'flex',
-          gap: '1.5rem',
+          gap: '2rem',
           animationDuration: '60s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
@@ -90,7 +90,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-80 h-56 object-cover rounded-xl shadow-lg"
+                className="w-96 h-64 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-1-${index}`}
               />
             </div>
@@ -104,16 +104,16 @@ export default function DiagonalMarqueeGallery() {
         style={{
           position: 'absolute',
           top: '15%',
-          left: '-50%',
-          width: '200%',
-          height: '15%',
+          left: '-30%',
+          width: '160%',
+          height: '20%',
           transform: 'rotate(18deg)',
           transformOrigin: 'center center'
         }}
       >
         <div className="diagonal-row animate-backward" style={{
           display: 'flex',
-          gap: '1.5rem',
+          gap: '2rem',
           animationDuration: '80s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
@@ -123,7 +123,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-80 h-56 object-cover rounded-xl shadow-lg"
+                className="w-96 h-64 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-2-${index}`}
               />
             </div>
@@ -137,16 +137,16 @@ export default function DiagonalMarqueeGallery() {
         style={{
           position: 'absolute',
           top: '40%',
-          left: '-50%',
-          width: '200%',
-          height: '15%',
+          left: '-30%',
+          width: '160%',
+          height: '20%',
           transform: 'rotate(18deg)',
           transformOrigin: 'center center'
         }}
       >
         <div className="diagonal-row animate-forward" style={{
           display: 'flex',
-          gap: '1.5rem',
+          gap: '2rem',
           animationDuration: '70s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
@@ -156,7 +156,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-80 h-56 object-cover rounded-xl shadow-lg"
+                className="w-96 h-64 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-3-${index}`}
               />
             </div>
@@ -170,16 +170,16 @@ export default function DiagonalMarqueeGallery() {
         style={{
           position: 'absolute',
           top: '65%',
-          left: '-50%',
-          width: '200%',
-          height: '15%',
+          left: '-30%',
+          width: '160%',
+          height: '20%',
           transform: 'rotate(18deg)',
           transformOrigin: 'center center'
         }}
       >
         <div className="diagonal-row animate-backward" style={{
           display: 'flex',
-          gap: '1.5rem',
+          gap: '2rem',
           animationDuration: '90s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
@@ -189,7 +189,7 @@ export default function DiagonalMarqueeGallery() {
               <img
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                className="w-80 h-56 object-cover rounded-xl shadow-lg"
+                className="w-96 h-64 object-cover rounded-xl shadow-lg"
                 data-testid={`image-card-4-${index}`}
               />
             </div>
