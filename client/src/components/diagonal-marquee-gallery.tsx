@@ -29,18 +29,20 @@ export default function DiagonalMarqueeGallery() {
       data-testid="diagonal-marquee-gallery"
       style={{
         perspective: '2000px',
-        transformStyle: 'preserve-3d'
+        transformStyle: 'preserve-3d',
+        transform: 'rotate(15deg)',
+        transformOrigin: 'center center'
       }}
     >
       {/* CSS Animations */}
       <style>{`
         @keyframes scroll-left {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-33.333%); }
         }
         
         @keyframes scroll-right {
-          0% { transform: translateX(-50%); }
+          0% { transform: translateX(-33.333%); }
           100% { transform: translateX(0); }
         }
         
@@ -61,7 +63,7 @@ export default function DiagonalMarqueeGallery() {
         }
         
         .marquee-row {
-          margin-bottom: 6rem;
+          margin-bottom: 2rem;
           height: 280px;
           overflow: hidden;
         }
@@ -72,7 +74,7 @@ export default function DiagonalMarqueeGallery() {
         <div 
           className="flex gap-8 animate-scroll-left w-full"
           style={{
-            transform: 'rotateX(15deg) rotateY(-5deg) rotateZ(10deg) translateZ(100px)',
+            transform: 'rotateX(10deg) rotateY(-5deg) translateZ(100px)',
             transformOrigin: 'center center',
             transformStyle: 'preserve-3d'
           }}
