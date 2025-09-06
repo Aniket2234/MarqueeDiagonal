@@ -1,4 +1,10 @@
+import { useEffect, useRef, useState } from "react";
+
 export default function DiagonalMarqueeGallery() {
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | 'none'>('none');
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   // High quality design images for the gallery
   const imageUrls = [
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
@@ -18,8 +24,45 @@ export default function DiagonalMarqueeGallery() {
   // Triple the images for seamless infinite scroll
   const infiniteImages = [...imageUrls, ...imageUrls, ...imageUrls];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const container = containerRef.current;
+      
+      if (!container) return;
+
+      // Get container position
+      const containerRect = container.getBoundingClientRect();
+      const containerVisible = containerRect.top < window.innerHeight && containerRect.bottom > 0;
+      
+      if (containerVisible) {
+        if (currentScrollY > lastScrollY + 5) {
+          setScrollDirection('down');
+        } else if (currentScrollY < lastScrollY - 5) {
+          setScrollDirection('up');
+        }
+        setLastScrollY(currentScrollY);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  // Get animation class based on scroll direction
+  const getAnimationClass = (baseDirection: 'left' | 'right') => {
+    if (scrollDirection === 'none') return 'paused';
+    
+    if (baseDirection === 'left') {
+      return scrollDirection === 'down' ? 'slide-right-to-left' : 'slide-left-to-right';
+    } else {
+      return scrollDirection === 'down' ? 'slide-left-to-right' : 'slide-right-to-left';
+    }
+  };
+
   return (
     <div 
+      ref={containerRef}
       className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100"
       data-testid="diagonal-marquee-gallery"
     >
