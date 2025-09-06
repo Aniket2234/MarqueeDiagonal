@@ -23,140 +23,160 @@ export default function DiagonalMarqueeGallery() {
   const infiniteImages = [...imageUrls, ...imageUrls, ...imageUrls];
 
   return (
-    <div 
-      ref={containerRef}
-      className="relative w-full h-[150vh] overflow-hidden bg-white z-10"
-      data-testid="diagonal-marquee-gallery"
-      style={{
-        transform: 'perspective(2000px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg)',
-        transformOrigin: 'center center',
-        transformStyle: 'preserve-3d'
-      }}
-    >
+    <>
       {/* CSS Animations */}
       <style>{`
-        @keyframes scroll-left {
+        @keyframes marquee-left {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-33.333%); }
         }
         
-        @keyframes scroll-right {
-          0% { transform: translateX(-50%); }
+        @keyframes marquee-right {
+          0% { transform: translateX(-33.333%); }
           100% { transform: translateX(0); }
         }
         
-        .animate-scroll-left {
-          animation: scroll-left 40s linear infinite;
+        .marquee-left {
+          animation: marquee-left 40s linear infinite;
         }
         
-        .animate-scroll-right {
-          animation: scroll-right 50s linear infinite;
+        .marquee-right {
+          animation: marquee-right 50s linear infinite;
         }
         
-        .animate-scroll-left-slow {
-          animation: scroll-left 60s linear infinite;
+        .marquee-left-slow {
+          animation: marquee-left 60s linear infinite;
         }
         
-        .animate-scroll-right-slow {
-          animation: scroll-right 45s linear infinite;
+        .marquee-right-slow {
+          animation: marquee-right 45s linear infinite;
         }
       `}</style>
 
-      {/* Row 1 - Top */}
       <div 
-        className="absolute flex gap-8 animate-scroll-left"
+        ref={containerRef}
+        className="relative w-full h-[120vh] overflow-hidden bg-white"
+        data-testid="diagonal-marquee-gallery"
         style={{
-          top: '3%',
-          left: '-80%',
-          width: '350%',
-          transform: 'rotate(15deg) translateZ(100px)',
-          transformOrigin: 'left center',
-          transformStyle: 'preserve-3d'
+          clipPath: 'polygon(0 0, 100% 10%, 100% 90%, 0 100%)',
+          transform: 'skewY(-3deg)',
+          transformOrigin: 'top left'
         }}
       >
-        {infiniteImages.map((src, index) => (
-          <div key={`row1-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
-              data-testid={`image-card-1-${index}`}
-            />
-          </div>
-        ))}
-      </div>
+        {/* Row 1 */}
+        <div 
+          className="absolute w-full flex marquee-left"
+          style={{
+            top: '5%',
+            gap: '2rem',
+            paddingLeft: '2rem'
+          }}
+        >
+          {infiniteImages.map((src, index) => (
+            <div 
+              key={`row1-${index}`} 
+              className="flex-shrink-0"
+              style={{
+                transform: 'skewY(3deg) rotateX(5deg) rotateY(-2deg) translateZ(30px)',
+                transformStyle: 'preserve-3d'
+              }}
+            >
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transition-all duration-300 hover:scale-105 hover:shadow-3xl"
+                data-testid={`image-card-1-${index}`}
+              />
+            </div>
+          ))}
+        </div>
 
-      {/* Row 2 */}
-      <div 
-        className="absolute flex gap-8 animate-scroll-right"
-        style={{
-          top: '25%',
-          left: '-180%',
-          width: '350%',
-          transform: 'rotate(15deg) translateZ(60px)',
-          transformOrigin: 'left center',
-          transformStyle: 'preserve-3d'
-        }}
-      >
-        {infiniteImages.map((src, index) => (
-          <div key={`row2-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
-              data-testid={`image-card-2-${index}`}
-            />
-          </div>
-        ))}
-      </div>
+        {/* Row 2 */}
+        <div 
+          className="absolute w-full flex marquee-right"
+          style={{
+            top: '30%',
+            gap: '2rem',
+            paddingRight: '2rem',
+            justifyContent: 'flex-end'
+          }}
+        >
+          {infiniteImages.map((src, index) => (
+            <div 
+              key={`row2-${index}`} 
+              className="flex-shrink-0"
+              style={{
+                transform: 'skewY(3deg) rotateX(5deg) rotateY(2deg) translateZ(20px)',
+                transformStyle: 'preserve-3d'
+              }}
+            >
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transition-all duration-300 hover:scale-105 hover:shadow-3xl"
+                data-testid={`image-card-2-${index}`}
+              />
+            </div>
+          ))}
+        </div>
 
-      {/* Row 3 */}
-      <div 
-        className="absolute flex gap-8 animate-scroll-left-slow"
-        style={{
-          top: '47%',
-          left: '-80%',
-          width: '350%',
-          transform: 'rotate(15deg) translateZ(30px)',
-          transformOrigin: 'left center',
-          transformStyle: 'preserve-3d'
-        }}
-      >
-        {infiniteImages.map((src, index) => (
-          <div key={`row3-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
-              data-testid={`image-card-3-${index}`}
-            />
-          </div>
-        ))}
-      </div>
+        {/* Row 3 */}
+        <div 
+          className="absolute w-full flex marquee-left-slow"
+          style={{
+            top: '55%',
+            gap: '2rem',
+            paddingLeft: '2rem'
+          }}
+        >
+          {infiniteImages.map((src, index) => (
+            <div 
+              key={`row3-${index}`} 
+              className="flex-shrink-0"
+              style={{
+                transform: 'skewY(3deg) rotateX(5deg) rotateY(-1deg) translateZ(10px)',
+                transformStyle: 'preserve-3d'
+              }}
+            >
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transition-all duration-300 hover:scale-105 hover:shadow-3xl"
+                data-testid={`image-card-3-${index}`}
+              />
+            </div>
+          ))}
+        </div>
 
-      {/* Row 4 - Bottom */}
-      <div 
-        className="absolute flex gap-8 animate-scroll-right-slow"
-        style={{
-          top: '69%',
-          left: '-180%',
-          width: '350%',
-          transform: 'rotate(15deg) translateZ(0px)',
-          transformOrigin: 'left center',
-          transformStyle: 'preserve-3d'
-        }}
-      >
-        {infiniteImages.map((src, index) => (
-          <div key={`row4-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
-              data-testid={`image-card-4-${index}`}
-            />
-          </div>
-        ))}
+        {/* Row 4 */}
+        <div 
+          className="absolute w-full flex marquee-right-slow"
+          style={{
+            top: '80%',
+            gap: '2rem',
+            paddingRight: '2rem',
+            justifyContent: 'flex-end'
+          }}
+        >
+          {infiniteImages.map((src, index) => (
+            <div 
+              key={`row4-${index}`} 
+              className="flex-shrink-0"
+              style={{
+                transform: 'skewY(3deg) rotateX(5deg) rotateY(1deg) translateZ(5px)',
+                transformStyle: 'preserve-3d'
+              }}
+            >
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transition-all duration-300 hover:scale-105 hover:shadow-3xl"
+                data-testid={`image-card-4-${index}`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
