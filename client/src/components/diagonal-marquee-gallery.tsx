@@ -25,13 +25,16 @@ export default function DiagonalMarqueeGallery() {
   return (
     <div 
       ref={containerRef}
-      className="relative w-full overflow-hidden bg-white py-20"
+      className="relative w-full bg-white py-20 pb-40"
       data-testid="diagonal-marquee-gallery"
       style={{
         perspective: '2000px',
         transformStyle: 'preserve-3d',
         transform: 'rotate(15deg)',
-        transformOrigin: 'center center'
+        transformOrigin: 'center center',
+        width: '120vw',
+        marginLeft: '-10vw',
+        overflow: 'visible'
       }}
     >
       {/* CSS Animations */}
@@ -65,7 +68,8 @@ export default function DiagonalMarqueeGallery() {
         .marquee-row {
           margin-bottom: 2rem;
           height: 280px;
-          overflow: hidden;
+          overflow: visible;
+          width: 100%;
         }
       `}</style>
 
