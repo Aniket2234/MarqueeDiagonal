@@ -66,7 +66,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-left"
         style={{
-          top: '1%',
+          top: '2vh',
           left: '0%',
           width: '200%',
           transform: 'rotate(15deg) translateZ(100px)',
@@ -90,7 +90,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-right"
         style={{
-          top: '26%',
+          top: '25vh',
           left: '-100%',
           width: '200%',
           transform: 'rotate(15deg) translateZ(60px)',
@@ -114,7 +114,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-left-slow"
         style={{
-          top: '51%',
+          top: '48vh',
           left: '0%',
           width: '200%',
           transform: 'rotate(15deg) translateZ(30px)',
@@ -138,7 +138,7 @@ export default function DiagonalMarqueeGallery() {
       <div 
         className="absolute flex gap-8 animate-scroll-right-slow"
         style={{
-          top: '76%',
+          top: '71vh',
           left: '-100%',
           width: '200%',
           transform: 'rotate(15deg) translateZ(0px)',
