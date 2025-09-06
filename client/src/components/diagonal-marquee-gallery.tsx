@@ -25,7 +25,7 @@ export default function DiagonalMarqueeGallery() {
   return (
     <div 
       ref={containerRef}
-      className="relative w-screen h-[150vh] overflow-hidden bg-white z-10 -ml-[50vw] left-1/2"
+      className="relative w-full h-[150vh] overflow-hidden bg-white z-10"
       data-testid="diagonal-marquee-gallery"
       style={{
         transform: 'perspective(2000px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg)',

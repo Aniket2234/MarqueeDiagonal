@@ -61,7 +61,7 @@ export default function Home() {
       </section>
 
       {/* Diagonal Marquee Gallery Section */}
-      <section className="relative">
+      <section className="relative w-screen -ml-[50vw] left-1/2">
         <div className="py-12 text-center bg-white">
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
             Our Portfolio
