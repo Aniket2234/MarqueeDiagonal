@@ -28,8 +28,9 @@ export default function DiagonalMarqueeGallery() {
       className="relative w-full h-screen overflow-hidden bg-white z-10"
       data-testid="diagonal-marquee-gallery"
       style={{
-        transform: 'perspective(1200px) rotateX(10deg) rotateY(-5deg)',
-        transformOrigin: 'center center'
+        transform: 'perspective(2000px) rotateX(20deg) rotateY(-10deg) rotateZ(5deg)',
+        transformOrigin: 'center center',
+        transformStyle: 'preserve-3d'
       }}
     >
       {/* CSS Animations */}
@@ -68,8 +69,9 @@ export default function DiagonalMarqueeGallery() {
           top: '3%',
           left: '0%',
           width: '200%',
-          transform: 'rotate(15deg)',
-          transformOrigin: 'left center'
+          transform: 'rotate(15deg) translateZ(100px)',
+          transformOrigin: 'left center',
+          transformStyle: 'preserve-3d'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -77,7 +79,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
               data-testid={`image-card-1-${index}`}
             />
           </div>
@@ -91,8 +93,9 @@ export default function DiagonalMarqueeGallery() {
           top: '25%',
           left: '-100%',
           width: '200%',
-          transform: 'rotate(15deg)',
-          transformOrigin: 'left center'
+          transform: 'rotate(15deg) translateZ(60px)',
+          transformOrigin: 'left center',
+          transformStyle: 'preserve-3d'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -100,7 +103,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
               data-testid={`image-card-2-${index}`}
             />
           </div>
@@ -114,8 +117,9 @@ export default function DiagonalMarqueeGallery() {
           top: '47%',
           left: '0%',
           width: '200%',
-          transform: 'rotate(15deg)',
-          transformOrigin: 'left center'
+          transform: 'rotate(15deg) translateZ(30px)',
+          transformOrigin: 'left center',
+          transformStyle: 'preserve-3d'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -123,7 +127,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
               data-testid={`image-card-3-${index}`}
             />
           </div>
@@ -137,8 +141,9 @@ export default function DiagonalMarqueeGallery() {
           top: '69%',
           left: '-100%',
           width: '200%',
-          transform: 'rotate(15deg)',
-          transformOrigin: 'left center'
+          transform: 'rotate(15deg) translateZ(0px)',
+          transformOrigin: 'left center',
+          transformStyle: 'preserve-3d'
         }}
       >
         {infiniteImages.map((src, index) => (
@@ -146,7 +151,7 @@ export default function DiagonalMarqueeGallery() {
             <img
               src={src}
               alt={`Gallery image ${index + 1}`}
-              className="w-80 h-56 object-cover rounded-2xl shadow-xl border-2 border-white/50"
+              className="w-80 h-56 object-cover rounded-2xl shadow-2xl border-4 border-white/80 transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
               data-testid={`image-card-4-${index}`}
             />
           </div>
