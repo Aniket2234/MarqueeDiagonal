@@ -112,20 +112,25 @@
 /* Diagonal Marquee Gallery Styles */
 @keyframes marqueeForward {
   0% {
-    transform: translateX(0) rotate(20deg);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%) rotate(20deg);
+    transform: translateX(-33.333%);
   }
 }
 
 @keyframes marqueeBackward {
   0% {
-    transform: translateX(-33.333%) rotate(20deg);
+    transform: translateX(-33.333%);
   }
   100% {
-    transform: translateX(0) rotate(20deg);
+    transform: translateX(0);
   }
+}
+
+.diagonal-row-container {
+  will-change: transform;
+  overflow: hidden;
 }
 
 .diagonal-row {

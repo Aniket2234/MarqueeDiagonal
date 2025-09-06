@@ -67,114 +67,200 @@ export default function DiagonalMarqueeGallery() {
     >
       {/* Diagonal Row 1 */}
       <div 
-        className="diagonal-row animate-forward"
+        className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '-25%',
-          left: '-30%',
-          width: '160%',
-          transform: 'rotate(20deg)',
+          top: '-15%',
+          left: '-50%',
+          width: '200%',
+          height: '15%',
+          transform: 'rotate(18deg)',
+          transformOrigin: 'center center'
+        }}
+      >
+        <div className="diagonal-row animate-forward" style={{
           display: 'flex',
-          gap: '2rem',
+          gap: '1.5rem',
           animationDuration: '60s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
-        }}
-      >
-        {infiniteImages.map((src, index) => (
-          <div key={`row1-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
-              data-testid={`image-card-1-${index}`}
-            />
-          </div>
-        ))}
+        }}>
+          {infiniteImages.map((src, index) => (
+            <div key={`row1-${index}`} className="flex-shrink-0">
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                data-testid={`image-card-1-${index}`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Diagonal Row 2 */}
       <div 
-        className="diagonal-row animate-backward"
+        className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '15%',
-          left: '-30%',
-          width: '160%',
-          transform: 'rotate(20deg)',
+          top: '5%',
+          left: '-50%',
+          width: '200%',
+          height: '15%',
+          transform: 'rotate(18deg)',
+          transformOrigin: 'center center'
+        }}
+      >
+        <div className="diagonal-row animate-backward" style={{
           display: 'flex',
-          gap: '2rem',
+          gap: '1.5rem',
           animationDuration: '80s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
-        }}
-      >
-        {infiniteImages.map((src, index) => (
-          <div key={`row2-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
-              data-testid={`image-card-2-${index}`}
-            />
-          </div>
-        ))}
+        }}>
+          {infiniteImages.map((src, index) => (
+            <div key={`row2-${index}`} className="flex-shrink-0">
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                data-testid={`image-card-2-${index}`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Diagonal Row 3 */}
       <div 
-        className="diagonal-row animate-forward"
+        className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '55%',
-          left: '-30%',
-          width: '160%',
-          transform: 'rotate(20deg)',
+          top: '25%',
+          left: '-50%',
+          width: '200%',
+          height: '15%',
+          transform: 'rotate(18deg)',
+          transformOrigin: 'center center'
+        }}
+      >
+        <div className="diagonal-row animate-forward" style={{
           display: 'flex',
-          gap: '2rem',
+          gap: '1.5rem',
           animationDuration: '70s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
-        }}
-      >
-        {infiniteImages.map((src, index) => (
-          <div key={`row3-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
-              data-testid={`image-card-3-${index}`}
-            />
-          </div>
-        ))}
+        }}>
+          {infiniteImages.map((src, index) => (
+            <div key={`row3-${index}`} className="flex-shrink-0">
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                data-testid={`image-card-3-${index}`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Diagonal Row 4 */}
       <div 
-        className="diagonal-row animate-backward"
+        className="diagonal-row-container"
         style={{
           position: 'absolute',
-          top: '95%',
-          left: '-30%',
-          width: '160%',
-          transform: 'rotate(20deg)',
+          top: '45%',
+          left: '-50%',
+          width: '200%',
+          height: '15%',
+          transform: 'rotate(18deg)',
+          transformOrigin: 'center center'
+        }}
+      >
+        <div className="diagonal-row animate-backward" style={{
           display: 'flex',
-          gap: '2rem',
+          gap: '1.5rem',
           animationDuration: '90s',
           animationIterationCount: 'infinite',
           animationTimingFunction: 'linear'
+        }}>
+          {infiniteImages.map((src, index) => (
+            <div key={`row4-${index}`} className="flex-shrink-0">
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                data-testid={`image-card-4-${index}`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Diagonal Row 5 */}
+      <div 
+        className="diagonal-row-container"
+        style={{
+          position: 'absolute',
+          top: '65%',
+          left: '-50%',
+          width: '200%',
+          height: '15%',
+          transform: 'rotate(18deg)',
+          transformOrigin: 'center center'
         }}
       >
-        {infiniteImages.map((src, index) => (
-          <div key={`row4-${index}`} className="flex-shrink-0">
-            <img
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-72 h-48 object-cover rounded-xl shadow-xl hover:scale-105 transition-all duration-300"
-              data-testid={`image-card-4-${index}`}
-            />
-          </div>
-        ))}
+        <div className="diagonal-row animate-forward" style={{
+          display: 'flex',
+          gap: '1.5rem',
+          animationDuration: '65s',
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
+        }}>
+          {infiniteImages.map((src, index) => (
+            <div key={`row5-${index}`} className="flex-shrink-0">
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                data-testid={`image-card-5-${index}`}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Diagonal Row 6 */}
+      <div 
+        className="diagonal-row-container"
+        style={{
+          position: 'absolute',
+          top: '85%',
+          left: '-50%',
+          width: '200%',
+          height: '15%',
+          transform: 'rotate(18deg)',
+          transformOrigin: 'center center'
+        }}
+      >
+        <div className="diagonal-row animate-backward" style={{
+          display: 'flex',
+          gap: '1.5rem',
+          animationDuration: '85s',
+          animationIterationCount: 'infinite',
+          animationTimingFunction: 'linear'
+        }}>
+          {infiniteImages.map((src, index) => (
+            <div key={`row6-${index}`} className="flex-shrink-0">
+              <img
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                className="w-64 h-44 object-cover rounded-xl shadow-lg"
+                data-testid={`image-card-6-${index}`}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
